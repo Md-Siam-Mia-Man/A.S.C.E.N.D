@@ -23,7 +23,7 @@ const createWindow = () => {
       contextIsolation: true,
       nodeIntegration: false,
     },
-    icon: path.join(assetsPath, "img/icon.ico"),
+    icon: path.join(assetsPath, "icon.ico"),
   });
 
   win.setMenu(null);
@@ -95,7 +95,7 @@ ipcMain.on("stop-logcat", () => {
 });
 
 ipcMain.handle("get-logo-path", () => {
-  return path.join(assetsPath, "logo.svg");
+  return path.join(assetsPath, "img", "logo.png");
 });
 
 ipcMain.handle("get-debloat-info", async () => {

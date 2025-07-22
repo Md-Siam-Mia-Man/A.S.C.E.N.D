@@ -1,14 +1,14 @@
 <div align="center">
 
 # ✨ A.S.C.E.N.D. ✨
-### Android System Control & ENhanced Debloater
+## Android System Control & ENhanced Debloater
 
 </div>
 
 <p align="center">
   <em>The one-stop-shop for taming your Android device! 🤖</em>
   <br>
-  <img src="./assets/Banner.png" alt="A.S.C.E.N.D. Application Screenshot"/>
+  <img src="./assets/img/Banner.png" alt="A.S.C.E.N.D. Application Screenshot"/>
 </p>
 
 Tired of digging through menus and typing cryptic commands? **A.S.C.E.N.D.** is a slick desktop app that puts the power of ADB and Scrcpy at your fingertips. No more command-line headaches—just point, click, and conquer your Android device.

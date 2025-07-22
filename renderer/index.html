@@ -4,6 +4,8 @@
 <head>
   <title>A.S.C.E.N.D. | Android Controller</title>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:;">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -16,7 +18,7 @@
   <div class="app-container">
     <header class="app-header">
       <h1 id="header-title">
-        <img id="header-logo-img" src="assets/logo.png" class="header-logo" alt="logo" />
+        <img id="header-logo-img" src="../assets/img/logo.png" class="header-logo" alt="logo" />
         A.S.C.E.N.D.
       </h1>
       <div class="header-controls">
@@ -27,7 +29,7 @@
           </div>
           <div class="dropdown-menu"></div>
         </div>
-        <button id="refresh-devices-btn" class="btn-secondary" style="width: auto" title="Refresh All Data">
+        <button id="refresh-devices-btn" class="btn-secondary" title="Refresh All Data">
           <i class="fa-solid fa-arrows-rotate"></i>
         </button>
         <i id="settings-btn" class="fa-solid fa-cog" title="Settings & Logs"></i>
@@ -174,7 +176,7 @@
             </div>
           </div>
         </div>
-        <button id="start-scrcpy-btn" class="btn-primary" style="margin-top: 20px; max-width: 300px">
+        <button id="start-scrcpy-btn" class="btn-primary">
           <i class="fa-solid fa-play"></i> Start Scrcpy
         </button>
       </div>
@@ -282,7 +284,7 @@
           <div class="card">
             <h4><i class="fa-solid fa-camera"></i> Screen & Display</h4>
             <div class="card-content">
-              <button id="screenshot-btn" class="btn-primary" style="margin-bottom: 15px">
+              <button id="screenshot-btn" class="btn-primary">
                 <i class="fa-solid fa-camera-retro"></i> Take Screenshot
               </button>
               <div class="input-grid-2">
@@ -302,7 +304,7 @@
           <div class="card card-full-width">
             <h4><i class="fa-solid fa-terminal"></i> Advanced Tools</h4>
             <div class="card-content">
-              <div class="button-grid-3" style="margin-bottom: 15px">
+              <div class="button-grid-3" id="advanced-tools-actions">
                 <button id="toggle-layout-bounds" class="btn-secondary toggle-btn">
                   Toggle Layout Bounds
                 </button>
@@ -321,7 +323,7 @@
                   </div>
                   <div class="dropdown-menu"></div>
                 </div>
-                <button id="run-quick-command" class="btn-primary" style="width: 120px">
+                <button id="run-quick-command" class="btn-primary">
                   Run
                 </button>
               </div>
@@ -428,7 +430,7 @@
           </button>
         </div>
         <div class="log-filters hidden" id="logcat-filters">
-          <input type="text" id="logcat-text-filter" placeholder="Filter text..." style="flex: 1" />
+          <input type="text" id="logcat-text-filter" placeholder="Filter text..." />
           <button class="log-filter-btn" data-level="E">Error</button>
           <button class="log-filter-btn" data-level="W">Warn</button>
           <button class="log-filter-btn" data-level="I">Info</button>
@@ -449,7 +451,7 @@
       <div class="modal-content">
         <p id="input-modal-prompt">Please enter a value:</p>
         <input type="text" id="input-modal-field" />
-        <div id="input-modal-actions" style="display: flex; gap: 10px; margin-top: 20px">
+        <div id="input-modal-actions">
           <button id="input-modal-cancel" class="btn-secondary">
             Cancel
           </button>

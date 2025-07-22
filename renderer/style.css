@@ -1,4 +1,3 @@
-/* style.css */
 :root {
      --space-cadet: #2B2D42;
      --cool-gray: #8D99AE;
@@ -433,6 +432,10 @@ textarea {
      gap: 10px;
      align-items: center;
      margin-bottom: 10px;
+}
+
+#logcat-text-filter {
+     flex: 1;
 }
 
 .log-filter-btn {
@@ -1034,4 +1037,31 @@ textarea {
 
 .hidden {
      display: none !important;
+}
+
+#refresh-devices-btn {
+     width: auto;
+}
+
+#start-scrcpy-btn {
+     margin-top: 20px;
+     max-width: 300px;
+}
+
+#screenshot-btn {
+     margin-bottom: 15px;
+}
+
+#advanced-tools-actions {
+     margin-bottom: 15px;
+}
+
+#run-quick-command {
+     width: 120px;
+}
+
+#input-modal-actions {
+     display: flex;
+     gap: 10px;
+     margin-top: 20px;
 }

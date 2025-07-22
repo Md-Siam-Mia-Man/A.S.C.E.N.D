@@ -8,6 +8,7 @@ let selectedFileItem = null;
 let contextMenuTarget = null;
 let currentAppFilter = "all";
 let devToggles = { layout: false, overdraw: false, pointer: false };
+let isBusy = false;
 
 const path = {
   join: (...args) =>
@@ -19,6 +20,7 @@ const path = {
 };
 
 function setBusy(state) {
+  isBusy = state;
   document.body.classList.toggle("is-busy", state);
   document.getElementById("busy-indicator").classList.toggle("active", state);
 }
@@ -496,8 +498,12 @@ async function parseDebloatDB(dbArray) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const logoImg = document.getElementById("header-logo-img");
-  const logoPath = await window.electronAPI.getLogoPath();
-  logoImg.src = logoPath.replace(/\\/g, "/");
+  try {
+    const logoPath = await window.electronAPI.getLogoPath();
+    logoImg.src = logoPath.replace(/\\/g, "/");
+  } catch (error) {
+    console.error("Failed to load logo:", error);
+  }
 
   sessionLog = document.getElementById("session-log");
   try {
