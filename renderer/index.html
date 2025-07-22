@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>A.S.C.E.N.D. | Android Controller</title>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 id="header-title">
+        <img id="header-logo-img" src="assets/logo.png" class="header-logo" alt="logo" />
+        A.S.C.E.N.D.
+      </h1>
+      <div class="header-controls">
+        <i id="busy-indicator" class="fa-solid fa-spinner"></i>
+        <div id="device-dropdown" class="custom-dropdown">
+          <div class="dropdown-selected">
+            <span id="selected-device-text">Select...</span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="dropdown-menu"></div>
+        </div>
+        <button id="refresh-devices-btn" class="btn-secondary" style="width: auto" title="Refresh All Data">
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </button>
+        <i id="settings-btn" class="fa-solid fa-cog" title="Settings & Logs"></i>
+      </div>
+    </header>
+    <nav class="app-nav">
+      <button class="nav-btn active" data-tab="dashboard-tab">
+        <i class="fa-solid fa-chart-line"></i> Dashboard
+      </button>
+      <button class="nav-btn" data-tab="scrcpy-tab">
+        <i class="fa-solid fa-eye"></i> Scrcpy
+      </button>
+      <button class="nav-btn" data-tab="files-tab">
+        <i class="fa-solid fa-folder-open"></i> Files
+      </button>
+      <button class="nav-btn" data-tab="apps-tab">
+        <i class="fa-brands fa-android"></i> Apps
+      </button>
+      <button class="nav-btn" data-tab="device-tab">
+        <i class="fa-solid fa-mobile-alt"></i> Device
+      </button>
+      <button class="nav-btn" data-tab="remote-tab">
+        <i class="fa-solid fa-gamepad"></i> Remote
+      </button>
+    </nav>
+    <main class="app-main-content">
+      <div id="dashboard-tab" class="tab-content active">
+        <div class="dashboard-grid-new">
+          <div class="info-card">
+            <div class="card-header">
+              <i class="fa-solid fa-mobile-screen-button"></i> Device Info
+            </div>
+            <div class="card-content">
+              <div class="info-line">
+                <span>Model:</span><strong id="info-model">...</strong>
+              </div>
+              <div class="info-line">
+                <span>Brand:</span><strong id="info-brand">...</strong>
+              </div>
+              <div class="info-line">
+                <span>Android Version:</span><strong id="info-version">...</strong>
+              </div>
+              <div class="info-line">
+                <span>Build:</span><strong id="info-build">...</strong>
+              </div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="card-header">
+              <i class="fa-solid fa-microchip"></i> System Status
+            </div>
+            <div class="card-content">
+              <div class="info-line">
+                <span>CPU Load:</span><strong id="info-cpu">...</strong>
+              </div>
+              <div class="info-line">
+                <span>Battery:</span><strong id="info-battery">...</strong>
+              </div>
+              <div class="progress-bar-container">
+                <div class="info-line">
+                  <span>RAM Usage:</span><strong id="info-ram-text">...</strong>
+                </div>
+                <div class="progress-bar">
+                  <div id="info-ram-bar" class="progress-bar-fill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="card-header">
+              <i class="fa-solid fa-display"></i> Screen
+            </div>
+            <div class="card-content">
+              <div class="info-line">
+                <span>Resolution:</span><strong id="info-resolution">...</strong>
+              </div>
+              <div class="info-line">
+                <span>Density:</span><strong id="info-density">...</strong>
+              </div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="card-header">
+              <i class="fa-solid fa-wifi"></i> Network
+            </div>
+            <div class="card-content">
+              <div class="info-line">
+                <span>WLAN IP:</span><strong id="info-ip">...</strong>
+              </div>
+              <div class="info-line">
+                <span>MAC Address:</span><strong id="info-mac">...</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="scrcpy-tab" class="tab-content">
+        <div class="controls-grid">
+          <div class="card">
+            <h4>Display & Recording</h4>
+            <div class="card-content">
+              <input type="text" id="bit-rate" placeholder="Video Bit Rate (e.g., 8M)" />
+              <label class="custom-checkbox"><input type="checkbox" id="record-screen" />
+                <div class="checkbox-box">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span>Record Screen</span>
+              </label>
+              <label class="custom-checkbox"><input type="checkbox" id="fullscreen" />
+                <div class="checkbox-box">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span>Start in Fullscreen</span>
+              </label>
+            </div>
+          </div>
+          <div class="card">
+            <h4>Device Control</h4>
+            <div class="card-content">
+              <label class="custom-checkbox"><input type="checkbox" id="turn-screen-off" />
+                <div class="checkbox-box">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span>Turn device screen off</span>
+              </label>
+              <label class="custom-checkbox"><input type="checkbox" id="show-touches" />
+                <div class="checkbox-box">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span>Show touches</span>
+              </label>
+              <label class="custom-checkbox"><input type="checkbox" id="stay-awake" />
+                <div class="checkbox-box">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span>Keep device awake</span>
+              </label>
+              <label class="custom-checkbox"><input type="checkbox" id="power-off-on-close" />
+                <div class="checkbox-box">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span>Power off on close</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <button id="start-scrcpy-btn" class="btn-primary" style="margin-top: 20px; max-width: 300px">
+          <i class="fa-solid fa-play"></i> Start Scrcpy
+        </button>
+      </div>
+      <div id="files-tab" class="tab-content">
+        <div class="file-explorer-single">
+          <div class="file-explorer-header">
+            <div id="file-view-controls">
+              <button id="file-view-list-btn" class="view-btn active" title="List View">
+                <i class="fa-solid fa-list"></i>
+              </button>
+              <button id="file-view-icon-btn" class="view-btn" title="Icon View">
+                <i class="fa-solid fa-grip"></i>
+              </button>
+            </div>
+            <nav id="file-breadcrumbs"></nav>
+          </div>
+          <div id="device-file-list-container" class="file-list-container list-view"></div>
+        </div>
+      </div>
+      <div id="apps-tab" class="tab-content">
+        <div class="debloater-layout">
+          <div class="debloater-list-pane">
+            <div class="pane-header">
+              <input type="text" id="app-search-input" placeholder="Search apps by name or package..." />
+            </div>
+            <div class="app-filters">
+              <button class="app-filter-btn active" data-filter="all">
+                All
+              </button>
+              <button class="app-filter-btn" data-filter="user">User</button>
+              <button class="app-filter-btn" data-filter="system">
+                System
+              </button>
+              <button id="refresh-app-list-btn" title="Refresh Apps">
+                <i class="fa-solid fa-sync"></i>
+              </button>
+            </div>
+            <div id="app-list">
+              <div class="app-list-placeholder">Loading apps...</div>
+            </div>
+          </div>
+          <div class="debloater-details-pane">
+            <div id="app-details-placeholder">
+              <i class="fa-regular fa-hand-pointer"></i>
+              <p>Select an app to view details</p>
+            </div>
+            <div id="app-details-content" class="hidden">
+              <h3 id="details-app-name">App Name</h3>
+              <p id="details-app-pkg">com.package.name</p>
+              <div id="details-app-safety" class="safety-badge"></div>
+              <h4>Description</h4>
+              <p id="details-app-desc">...</p>
+              <h4>Actions</h4>
+              <div class="details-actions">
+                <button id="details-action-uninstall" class="btn-danger">
+                  <i class="fa-solid fa-trash"></i> Uninstall
+                </button>
+                <button id="details-action-disable" class="btn-warning">
+                  <i class="fa-solid fa-ban"></i> Disable
+                </button>
+                <button id="details-action-clear" class="btn-secondary">
+                  <i class="fa-solid fa-eraser"></i> Clear Data
+                </button>
+                <button id="details-action-stop" class="btn-secondary">
+                  <i class="fa-solid fa-stop-circle"></i> Force Stop
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="device-tab" class="tab-content">
+        <div class="controls-grid device-grid">
+          <div class="card">
+            <h4><i class="fa-solid fa-power-off"></i> Power Control</h4>
+            <div class="card-content button-grid-4">
+              <button id="reboot-system-btn" class="btn-secondary">
+                Reboot
+              </button>
+              <button id="reboot-recovery-btn" class="btn-secondary">
+                Reboot to Recovery
+              </button>
+              <button id="reboot-bootloader-btn" class="btn-secondary">
+                Reboot to Bootloader
+              </button>
+              <button id="reboot-safemode-btn" class="btn-warning">
+                Reboot to Safe Mode
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <h4><i class="fa-solid fa-wifi"></i> Wireless ADB</h4>
+            <div class="card-content">
+              <input type="text" id="device-ip" placeholder="Device IP Address (from settings)" />
+              <div class="button-grid-2">
+                <button id="enable-wireless-btn" class="btn-secondary">
+                  Enable Wireless
+                </button>
+                <button id="connect-ip-btn" class="btn-primary">
+                  Connect
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h4><i class="fa-solid fa-camera"></i> Screen & Display</h4>
+            <div class="card-content">
+              <button id="screenshot-btn" class="btn-primary" style="margin-bottom: 15px">
+                <i class="fa-solid fa-camera-retro"></i> Take Screenshot
+              </button>
+              <div class="input-grid-2">
+                <input type="text" id="set-resolution" placeholder="1080x1920" />
+                <input type="text" id="set-density" placeholder="420" />
+              </div>
+              <div class="button-grid-2">
+                <button id="set-screen-props" class="btn-secondary">
+                  Set Properties
+                </button>
+                <button id="reset-screen-props" class="btn-danger">
+                  Reset Properties
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card card-full-width">
+            <h4><i class="fa-solid fa-terminal"></i> Advanced Tools</h4>
+            <div class="card-content">
+              <div class="button-grid-3" style="margin-bottom: 15px">
+                <button id="toggle-layout-bounds" class="btn-secondary toggle-btn">
+                  Toggle Layout Bounds
+                </button>
+                <button id="toggle-gpu-overdraw" class="btn-secondary toggle-btn">
+                  Toggle GPU Overdraw
+                </button>
+                <button id="toggle-pointer-location" class="btn-secondary toggle-btn">
+                  Toggle Pointer Location
+                </button>
+              </div>
+              <div class="dumpsys-controls">
+                <div id="quick-command-dropdown" class="custom-dropdown">
+                  <div class="dropdown-selected">
+                    <span id="selected-command-text">Select a dumpsys command...</span><i
+                      class="fa-solid fa-chevron-down"></i>
+                  </div>
+                  <div class="dropdown-menu"></div>
+                </div>
+                <button id="run-quick-command" class="btn-primary" style="width: 120px">
+                  Run
+                </button>
+              </div>
+              <textarea id="dumpsys-output" readonly placeholder="Command output will appear here..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="remote-tab" class="tab-content">
+        <div class="remote-layout">
+          <div class="remote-dpad-grid">
+            <div></div>
+            <button id="remote-dpad-up" class="remote-btn">
+              <i class="fa-solid fa-chevron-up"></i>
+            </button>
+            <div></div>
+            <button id="remote-dpad-left" class="remote-btn">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="remote-dpad-center" class="remote-btn">
+              <i class="fa-solid fa-circle-dot"></i>
+            </button>
+            <button id="remote-dpad-right" class="remote-btn">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div></div>
+            <button id="remote-dpad-down" class="remote-btn">
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div></div>
+          </div>
+          <div class="remote-standard-btns">
+            <button id="remote-back-btn" class="remote-btn">
+              <i class="fa-solid fa-arrow-left"></i><span>Back</span>
+            </button>
+            <button id="remote-home-btn" class="remote-btn">
+              <i class="fa-solid fa-house"></i><span>Home</span>
+            </button>
+            <button id="remote-recents-btn" class="remote-btn">
+              <i class="fa-solid fa-square"></i><span>Recents</span>
+            </button>
+          </div>
+          <div class="remote-media-btns">
+            <button id="remote-vol-down-btn" class="remote-btn">
+              <i class="fa-solid fa-volume-down"></i>
+            </button>
+            <button id="remote-prev-btn" class="remote-btn">
+              <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button id="remote-play-pause-btn" class="remote-btn">
+              <i class="fa-solid fa-play-pause"></i>
+            </button>
+            <button id="remote-next-btn" class="remote-btn">
+              <i class="fa-solid fa-forward-step"></i>
+            </button>
+            <button id="remote-vol-up-btn" class="remote-btn">
+              <i class="fa-solid fa-volume-up"></i>
+            </button>
+          </div>
+          <div class="remote-text-input">
+            <input type="text" id="send-text-input" placeholder="Type text and press Enter to send..." />
+            <button id="send-text-btn" class="btn-primary">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div id="file-context-menu" class="custom-context-menu">
+    <div class="context-item" data-action="open">
+      <i class="fa-solid fa-folder-open"></i> Open
+    </div>
+    <div class="context-item" data-action="download">
+      <i class="fa-solid fa-download"></i> Download
+    </div>
+    <div class="context-item-separator"></div>
+    <div class="context-item" data-action="rename">
+      <i class="fa-solid fa-i-cursor"></i> Rename
+    </div>
+    <div class="context-item" data-action="delete">
+      <i class="fa-solid fa-trash"></i> Delete
+    </div>
+    <div class="context-item-separator"></div>
+    <div class="context-item" data-action="new-folder">
+      <i class="fa-solid fa-folder-plus"></i> New Folder
+    </div>
+  </div>
+  <div id="settings-modal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-book"></i> Settings & Logs</h2>
+        <button id="modal-close-btn" class="modal-close-btn">
+          <i class="fa-solid fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-content">
+        <div class="app-nav">
+          <button class="nav-btn active" data-log-view="session-log">
+            Session Log
+          </button>
+          <button class="nav-btn" data-log-view="logcat-log">
+            Device Log (Logcat)
+          </button>
+        </div>
+        <div class="log-filters hidden" id="logcat-filters">
+          <input type="text" id="logcat-text-filter" placeholder="Filter text..." style="flex: 1" />
+          <button class="log-filter-btn" data-level="E">Error</button>
+          <button class="log-filter-btn" data-level="W">Warn</button>
+          <button class="log-filter-btn" data-level="I">Info</button>
+        </div>
+        <div id="session-log" class="log-view"></div>
+        <div id="logcat-log" class="log-view hidden"></div>
+      </div>
+    </div>
+  </div>
+  <div id="input-modal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h2 id="input-modal-title">Input Required</h2>
+        <button id="input-modal-close" class="modal-close-btn">
+          <i class="fa-solid fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-content">
+        <p id="input-modal-prompt">Please enter a value:</p>
+        <input type="text" id="input-modal-field" />
+        <div id="input-modal-actions" style="display: flex; gap: 10px; margin-top: 20px">
+          <button id="input-modal-cancel" class="btn-secondary">
+            Cancel
+          </button>
+          <button id="input-modal-ok" class="btn-primary">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+
+</html>

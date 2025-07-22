@@ -1,0 +1,45 @@
+{
+  "name": "ascend",
+  "version": "1.0.0",
+  "description": "Android System Control & ENhanced Debloater",
+  "main": "main.js",
+  "author": "Md. Siam Mia",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.ascend.dev",
+    "productName": "A.S.C.E.N.D.",
+    "files": [
+      "main.js",
+      "preload.js",
+      "debloat_db.json",
+      "renderer/**/*",
+      "assets/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "bin",
+        "to": "bin"
+      }
+    ],
+    "win": {
+      "icon": "assets/img/icon.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "installerIcon": "assets/img/icon.ico",
+      "uninstallerIcon": "assets/img/icon.ico",
+      "installerHeaderIcon": "assets/img/icon.ico",
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

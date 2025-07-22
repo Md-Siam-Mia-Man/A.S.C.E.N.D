@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.exe
+*.dll
+*.bat
+*.vbs
+*.conf
+*.txt
