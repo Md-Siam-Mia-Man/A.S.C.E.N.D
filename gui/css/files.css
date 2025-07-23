@@ -1,0 +1,188 @@
+#files-tab.tab-content.active {
+     height: calc(100vh - 125px);
+     display: flex;
+     flex-direction: column;
+}
+
+.file-explorer-single {
+     display: flex;
+     flex-direction: column;
+     flex: 1;
+     min-height: 0;
+}
+
+.file-explorer-header {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+     padding: 10px;
+     background: var(--dark-grey);
+     border-radius: 8px;
+     margin-bottom: 10px;
+}
+
+#file-view-controls {
+     display: flex;
+     gap: 5px;
+}
+
+.view-btn {
+     padding: 8px 10px;
+     background: var(--black);
+     color: var(--light-grey);
+     border: none;
+     font-size: 14px;
+     width: auto;
+}
+
+.view-btn.active {
+     background: var(--red);
+     color: var(--white);
+}
+
+#file-breadcrumbs {
+     flex: 1;
+     display: flex;
+     align-items: center;
+     gap: 5px;
+     overflow-x: auto;
+     padding: 5px;
+     scrollbar-width: thin;
+}
+
+#file-breadcrumbs::-webkit-scrollbar {
+     height: 4px;
+}
+
+.breadcrumb-item {
+     cursor: pointer;
+     color: var(--light-grey);
+     font-size: 13px;
+     white-space: nowrap;
+}
+
+.breadcrumb-item:hover {
+     color: var(--white);
+}
+
+.breadcrumb-separator {
+     color: var(--light-grey);
+     margin: 0 4px;
+}
+
+.file-list-container {
+     flex: 1;
+     overflow-y: auto;
+     background: var(--dark-grey);
+     border-radius: 8px;
+     padding: 10px;
+     display: grid;
+     align-content: flex-start;
+}
+
+.file-list-container.list-view {
+     grid-template-columns: 1fr;
+     gap: 4px;
+}
+
+.file-list-container.icon-view {
+     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+     gap: 15px;
+}
+
+.file-item {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     padding: 8px;
+     border-radius: 6px;
+     cursor: pointer;
+     user-select: none;
+}
+
+.file-item.selected {
+     background: var(--red);
+}
+
+.icon-view .file-item {
+     flex-direction: column;
+     text-align: center;
+     gap: 8px;
+}
+
+.file-item i {
+     font-size: 18px;
+     color: var(--light-grey);
+     pointer-events: none;
+}
+
+.icon-view .file-item i {
+     font-size: 32px;
+}
+
+.file-item.selected i {
+     color: var(--white);
+}
+
+.file-item span {
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     max-width: 100%;
+     font-size: 13px;
+     width: 100%;
+     pointer-events: none;
+}
+
+.custom-context-menu {
+     position: fixed;
+     z-index: 1000;
+     background: var(--dark-grey);
+     border-radius: 8px;
+     padding: 8px;
+     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+     display: none;
+     animation: contextFadeIn 0.1s ease-in-out;
+}
+
+@keyframes contextFadeIn {
+     from {
+          opacity: 0;
+          transform: scale(0.95);
+     }
+
+     to {
+          opacity: 1;
+          transform: scale(1);
+     }
+}
+
+.context-item {
+     padding: 8px 15px;
+     border-radius: 6px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-size: 13px;
+}
+
+.context-item:hover {
+     background: var(--red);
+}
+
+.context-item i {
+     width: 16px;
+     text-align: center;
+     color: var(--light-grey);
+}
+
+.context-item:hover i {
+     color: var(--white);
+}
+
+.context-item-separator {
+     height: 1px;
+     background: var(--light-grey);
+     margin: 6px 0;
+}

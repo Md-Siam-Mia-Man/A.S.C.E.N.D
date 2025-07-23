@@ -9,6 +9,9 @@
     "start": "electron .",
     "build": "node build-installer.js"
   },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2"
+  },
   "devDependencies": {
     "electron": "^28.3.3",
     "electron-builder": "^24.13.3"
@@ -20,8 +23,10 @@
       "main.js",
       "preload.js",
       "debloat_db.json",
-      "renderer/**/*",
-      "assets/**/*"
+      "gui/**/*",
+      "assets/**/*",
+      "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+      "node_modules/@fortawesome/fontawesome-free/webfonts"
     ],
     "extraResources": [
       {

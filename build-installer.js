@@ -2,7 +2,15 @@ const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
-console.log("--- Starting A.S.C.E.N.D. build process ---");
+const packageJson = JSON.parse(fs.readFileSync("package.json", "utf-8"));
+const { version } = packageJson;
+
+if (!version) {
+  console.error("Version could not be found in package.json");
+  process.exit(1);
+}
+
+console.log(`--- Starting A.S.C.E.N.D. build process for v${version} ---`);
 
 const releaseDir = "release";
 const distDir = "dist";
@@ -36,7 +44,9 @@ try {
       `Inno Setup Compiler not found at: ${ISCC_PATH}\nPlease update the ISCC_PATH in build-installer.js or install Inno Setup to that location.`
     );
   }
-  execSync(`"${ISCC_PATH}" "${setupScriptPath}"`, { stdio: "inherit" });
+  execSync(`"${ISCC_PATH}" /DAppVersion=${version} "${setupScriptPath}"`, {
+    stdio: "inherit",
+  });
 
   console.log("[5/5] Finalizing and cleaning up...");
   if (fs.existsSync(distDir))

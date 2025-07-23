@@ -27,7 +27,7 @@ const createWindow = () => {
   });
 
   win.setMenu(null);
-  win.loadFile("renderer/index.html");
+  win.loadFile("gui/index.html");
 
   if (isDev) {
     win.webContents.openDevTools();

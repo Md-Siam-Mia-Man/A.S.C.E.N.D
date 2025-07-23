@@ -1,0 +1,54 @@
+.dashboard-grid-new {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+     gap: 20px;
+}
+
+.info-card {
+     background: var(--dark-grey);
+     border-radius: 10px;
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+}
+
+.info-line {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-size: 13px;
+}
+
+.info-line span {
+     color: var(--light-grey);
+}
+
+.info-line strong {
+     color: var(--white);
+     text-align: right;
+     max-width: 60%;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+}
+
+.progress-bar-container {
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+}
+
+.progress-bar {
+     width: 100%;
+     background: var(--black);
+     border-radius: 5px;
+     height: 10px;
+     overflow: hidden;
+}
+
+.progress-bar-fill {
+     height: 100%;
+     background: var(--red);
+     border-radius: 5px;
+     transition: width 0.3s ease;
+}
