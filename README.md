@@ -116,7 +116,3 @@ Contributions are welcome! If you have an idea for a new feature or have found a
 This project is licensed under the **MIT License**. See the `LICENSE.md` file for details.
 
 **Disclaimer:** This is a powerful tool. Deleting or disabling the wrong system packages can lead to device instability or bootloops. The user assumes all risk. When in doubt, do not remove a package without researching it first.
-
-```
-
-```
