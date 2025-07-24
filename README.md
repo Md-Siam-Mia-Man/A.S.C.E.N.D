@@ -1,7 +1,8 @@
 <img src="./assets/img/Banner.png" alt="A.S.C.E.N.D. Application Screenshot"/>
 
-<h1 style="text-align: center; width: 100%;">Android System Control & ENhanced Debloater</h2>
-<div style="text-align: center">
+<h1 style="text-align: center; width: 100%;">Android System Control & ENhanced Debloater</h1>
+
+<div style="text-align: center; width: 100%;">
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Md-Siam-Mia-Code/A.S.C.E.N.D.?style=for-the-badge)
 ![GitHub License](https://img.shields.io/github/license/Md-Siam-Mia-Code/A.S.C.E.N.D.?style=for-the-badge)
@@ -27,13 +28,9 @@ A.S.C.E.N.D. is a professional tool that wraps the power of ADB (Android Debug B
 
 ---
 
-## 📸 Screenshots
+## 📸 Application GUI
 
-_(This is a placeholder section. You can add updated screenshots of the new UI here.)_
-
-|      Dashboard       | Command Deck Debloater |
-| :------------------: | :--------------------: |
-| _Image of Dashboard_ |  _Image of Debloater_  |
+<img src="./assets/img/GUI.png" alt="A.S.C.E.N.D. GUI Screenshot"/>
 
 ---
 
@@ -43,18 +40,18 @@ To allow A.S.C.E.N.D. to connect to your device, you must enable USB Debugging.
 
 1. **Enable Developer Options:**
 
-    - Go to `Settings` > `About phone`.
-    - Tap on `Build number` 7 times until you see a "You are now a developer!" message.
+   - Go to `Settings` > `About phone`.
+   - Tap on `Build number` 7 times until you see a "You are now a developer!" message.
 
 2. **Enable USB Debugging:**
 
-    - Go to `Settings` > `System` > `Developer options`.
-    - Scroll down and enable the `USB debugging` toggle.
+   - Go to `Settings` > `System` > `Developer options`.
+   - Scroll down and enable the `USB debugging` toggle.
 
 3. **Authorize Your Computer:**
-    - Connect your device to your computer via USB.
-    - A prompt will appear on your device asking to "Allow USB debugging?".
-    - Check the "Always allow from this computer" box and tap "Allow".
+   - Connect your device to your computer via USB.
+   - A prompt will appear on your device asking to "Allow USB debugging?".
+   - Check the "Always allow from this computer" box and tap "Allow".
 
 ---
 
@@ -80,7 +77,7 @@ Want to contribute or build your own version?
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Md-Siam-Mia-Code/A.S.C.E.N.D..git
+git clone https://github.com/Md-Siam-Mia-Code/A.S.C.E.N.D.git
 
 # 2. Navigate into the project directory
 cd A.S.C.E.N.D
