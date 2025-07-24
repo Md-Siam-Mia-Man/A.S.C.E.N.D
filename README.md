@@ -1,98 +1,122 @@
-<div align="center">
+<img src="./assets/img/Banner.png" alt="A.S.C.E.N.D. Application Screenshot"/>
 
-# ✨ A.S.C.E.N.D. ✨
-## Android System Control & ENhanced Debloater
+<h1 style="text-align: center; width: 100%;">Android System Control & ENhanced Debloater</h2>
+<div style="text-align: center">
+
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Md-Siam-Mia-Code/A.S.C.E.N.D.?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/Md-Siam-Mia-Code/A.S.C.E.N.D.?style=for-the-badge)
 
 </div>
 
-<p align="center">
-  <em>The one-stop-shop for taming your Android device! 🤖</em>
-  <br>
-  <img src="./assets/img/Banner.png" alt="A.S.C.E.N.D. Application Screenshot"/>
-</p>
+**A powerful, elegant desktop application for taking complete control of your Android device.**
 
-Tired of digging through menus and typing cryptic commands? **A.S.C.E.N.D.** is a slick desktop app that puts the power of ADB and Scrcpy at your fingertips. No more command-line headaches—just point, click, and conquer your Android device.
+A.S.C.E.N.D. is a professional tool that wraps the power of ADB (Android Debug Bridge) and Scrcpy into a beautiful and intuitive graphical interface. Stop memorizing cryptic commands and start managing your device with the efficiency and style it deserves.
 
 ---
 
-## 🚀 Features That Slap
+## ✨ Key Features
 
-- **📈 Live Dashboard:** See your phone's vitals (CPU, RAM, battery) like it's a patient in the ER. But, you know, a healthy patient.
-- **🧹 App Annihilator:** List all your apps, then yeet the bloatware into the digital abyss. Uninstall, disable, or force-stop with righteous fury.
-- **📂 File Juggler:** Drag, drop, and delete files on your device like a digital ninja.
-- **📱 Scrcpy on Steroids:** Mirror your screen, record it, or go fullscreen with a single click. It's showtime!
-- **🔧 Pro-Gamer Moves:** Reboot to recovery, take screenshots, enable wireless ADB, and toggle developer settings like a true power user.
-- **💬 Command Center:** Got a favorite ADB command? Run it in our built-in terminal and see what happens. For science!
-
----
-
-## 📦 Installation (The Easy Way)
-
-Why make things complicated? Grab the latest installer and you're golden.
-
-1.  Head over to the **[Releases](https://github.com/Md-Siam-Mia-Code/A.S.C.E.N.D./releases)** page.
-2.  Download the `A.S.C.E.N.D-Setup-x.x.x.exe` file.
-3.  Run it. Click "Next" a few times. Boom, you're done. 🥳
+| Feature                            | Description                                                                                                                                                                                                                                         |
+| :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **🚀 The Command Deck Debloater**  | A completely reimagined debloating experience. View all app details upfront in expandable cards, perform **batch uninstalls/disables** with a floating action bar, and use powerful integrated filters to pinpoint exactly what you want to remove. |
+| **📈 At-a-Glance Dashboard**       | A clean, real-time overview of your device's most critical stats, including model info, Android version, battery status, CPU load, and RAM usage.                                                                                                   |
+| **🖥️ Seamless Scrcpy Integration** | Mirror your device's screen with extensive options. Record, go fullscreen, show touches, or keep the device awake—all configurable from a simple, clean UI.                                                                                         |
+| **📂 Integrated File Explorer**    | A full-featured file manager for your device. Browse, download, rename, and delete files and folders with a familiar, dual-pane (list/icon) view and full context menu support.                                                                     |
+| **⚡ Power User Toolkit**          | Execute advanced functions with a single click. Reboot into recovery or bootloader, enable Wireless ADB, take screenshots, and toggle developer settings like GPU overdraw and layout bounds.                                                       |
+| **🎮 Virtual Remote Control**      | A handy remote to control your device's media, navigation, and volume. Includes a D-Pad for TV boxes and a text input field for convenience.                                                                                                        |
 
 ---
 
-## 🚦 Before You Start: Flip the Switch!
+## 📸 Screenshots
 
-Your phone needs to trust your computer. Here's how to make the magic happen:
+_(This is a placeholder section. You can add updated screenshots of the new UI here.)_
 
-1.  **Become a Developer (No Degree Required):**
+|      Dashboard       | Command Deck Debloater |
+| :------------------: | :--------------------: |
+| _Image of Dashboard_ |  _Image of Debloater_  |
+
+---
+
+## 🚦 Prerequisites
+
+To allow A.S.C.E.N.D. to connect to your device, you must enable USB Debugging.
+
+1. **Enable Developer Options:**
+
     - Go to `Settings` > `About phone`.
-    - Frantically tap `Build number` 7 times until your phone congratulates you.
-2.  **Enable USB Debugging:**
-    - Go to `Settings` > `System` > `Developer options`.
-    - Find `USB debugging` and turn it ON.
-3.  **Connect & Trust:**
-    - Plug your phone into your PC.
-    - A popup will ask you to "Allow USB debugging?". Check "Always allow" and tap "Allow".
+    - Tap on `Build number` 7 times until you see a "You are now a developer!" message.
 
-Now you're ready to rock. 🤘
+2. **Enable USB Debugging:**
+
+    - Go to `Settings` > `System` > `Developer options`.
+    - Scroll down and enable the `USB debugging` toggle.
+
+3. **Authorize Your Computer:**
+    - Connect your device to your computer via USB.
+    - A prompt will appear on your device asking to "Allow USB debugging?".
+    - Check the "Always allow from this computer" box and tap "Allow".
 
 ---
 
-## 🛠️ For the Hackers (Building from Source)
+## 📦 Installation
 
-Wanna get your hands dirty? Awesome.
+Get up and running in seconds.
 
-### What you'll need:
-- [Node.js](https://nodejs.org/) (it comes with npm)
+1. Navigate to the **[Releases Page](https://github.com/Md-Siam-Mia-Code/A.S.C.E.N.D./releases)**.
+2. Download the latest `A.S.C.E.N.D-Setup-x.x.x.exe` installer.
+3. Run the installer and follow the on-screen instructions.
 
-### Let's build this thing:
+---
+
+## 🛠️ Development & Building from Source
+
+Want to contribute or build your own version?
+
+### Requirements
+
+- [Node.js](https://nodejs.org/) (which includes `npm`)
+
+### Steps
+
 ```bash
-# 1. Clone the repo like you're stealing the Declaration of Independence
-git https://github.com/Md-Siam-Mia-Code/A.S.C.E.N.D..git
-cd ADB-SCRCPY
+# 1. Clone the repository
+git clone https://github.com/Md-Siam-Mia-Code/A.S.C.E.N.D..git
 
-# 2. Install the bajillion dependencies
+# 2. Navigate into the project directory
+cd A.S.C.E.N.D
+
+# 3. Install dependencies
 npm install
 
-# 3. Run it in dev mode (with hot-reloading!)
+# 4. Run the app in development mode (with DevTools)
 npm start
 
-# 4. Build the installer for the masses
-npm run dist
+# 5. Build the distributable installer
+npm run build
 ```
-The final installer will be chilling in the `dist` folder.
+
+The packaged application will be located in the `dist` directory.
 
 ---
 
-## 🤝 Wanna Help?
+## 🤝 Contributing
 
-Got an idea? Found a bug? Let's make this thing even better together.
+Contributions are welcome! If you have an idea for a new feature or have found a bug, please feel free to:
 
-1.  Fork the repo.
-2.  Create a new branch for your awesome feature.
-3.  Make your changes.
-4.  Open a Pull Request and tell us what you did!
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourAwesomeFeature`).
+3. Commit your changes (`git commit -m 'Add some AwesomeFeature'`).
+4. Push to the branch (`git push origin feature/YourAwesomeFeature`).
+5. Open a Pull Request.
 
 ---
 
-## 📜 The Boring Legal Stuff
+## 📜 License & Disclaimer
 
-This project is licensed under the ISC License. Basically, do what you want with it, but don't blame me if you accidentally turn your phone into a toaster. 🍞
+This project is licensed under the **MIT License**. See the `LICENSE.md` file for details.
 
-**Disclaimer:** Use this tool responsibly. Deleting the wrong thing can make your device very, very sad. When in doubt, don't.
+**Disclaimer:** This is a powerful tool. Deleting or disabling the wrong system packages can lead to device instability or bootloops. The user assumes all risk. When in doubt, do not remove a package without researching it first.
+
+```
+
+```

@@ -20,7 +20,7 @@ function createWindow() {
     frame: false,
     titleBarStyle: "hidden",
     backgroundColor: "#0f0f0f",
-    icon: path.join(__dirname, "..", "assets/logo.png"),
+    icon: path.join(__dirname, "..", "../assets/img/logo.png"),
   });
 
   if (isDev) {
