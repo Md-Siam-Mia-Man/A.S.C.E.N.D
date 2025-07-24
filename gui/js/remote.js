@@ -1,13 +1,15 @@
+// remote.js
 import { state } from "./state.js";
 import { runCommand } from "./adb.js";
+import { $ } from "./utils.js";
 
-export function initRemoteTab() {
+export function initRemote() {
   const remoteKeycodes = {
     "remote-dpad-up": 19,
     "remote-dpad-down": 20,
     "remote-dpad-left": 21,
     "remote-dpad-right": 22,
-    "remote-dpad-center": 23,
+    "remote-dpad-center": 66,
     "remote-home-btn": 3,
     "remote-back-btn": 4,
     "remote-recents-btn": 187,
@@ -18,40 +20,26 @@ export function initRemoteTab() {
     "remote-play-pause-btn": 85,
   };
 
-  Object.entries(remoteKeycodes).forEach(([id, keycode]) =>
-    document.getElementById(id).addEventListener("click", () => {
-      if (state.currentDevice)
-        runCommand(
-          "adb.exe",
-          ["-s", state.currentDevice, "shell", "input", "keyevent", keycode],
-          true
-        );
-    })
-  );
+  Object.entries(remoteKeycodes).forEach(([id, keycode]) => {
+    $(id)?.addEventListener("click", () => {
+      runCommand("adb", ["shell", "input", "keyevent", keycode], true);
+    });
+  });
 
   const sendText = () => {
-    const textInput = document.getElementById("send-text-input");
-    if (state.currentDevice && textInput.value) {
+    const textInput = $("send-text-input");
+    if (textInput.value) {
       runCommand(
-        "adb.exe",
-        [
-          "-s",
-          state.currentDevice,
-          "shell",
-          "input",
-          "text",
-          `"${textInput.value.replace(/"/g, '\\"')}"`,
-        ],
+        "adb",
+        ["shell", "input", "text", textInput.value.replace(/ /g, "%s")],
         true
       );
       textInput.value = "";
     }
   };
 
-  document.getElementById("send-text-btn").addEventListener("click", sendText);
-  document
-    .getElementById("send-text-input")
-    .addEventListener("keydown", (e) => {
-      if (e.key === "Enter") sendText();
-    });
+  $("send-text-btn")?.addEventListener("click", sendText);
+  $("send-text-input")?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") sendText();
+  });
 }

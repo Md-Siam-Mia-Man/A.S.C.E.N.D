@@ -1,30 +1,30 @@
+// state.js
+
 export const state = {
+  // Device State
   currentDevice: null,
   currentDeviceList: [],
+
+  // UI State
+  isBusy: false,
+  activeTab: "dashboard-tab",
+  isSidebarCollapsed: true,
+
+  // Debloater State
   debloatDB: {},
+  currentAppFilter: "all",
+  selectedApp: null,
+
+  // File Explorer State
   currentDevicePath: "/sdcard/",
   fileViewMode: "list",
   selectedFileItem: null,
   contextMenuTarget: null,
-  currentAppFilter: "all",
+
+  // Device Toggles State
   devToggles: {
     layout: false,
     overdraw: false,
     pointer: false,
   },
-  isBusy: false,
-};
-
-export const dom = {
-  sessionLog: document.getElementById("session-log"),
-  logcatLog: document.getElementById("logcat-log"),
-};
-
-export const path = {
-  join: (...args) =>
-    args
-      .map((arg) => arg.replace(/\/$/, ""))
-      .filter(Boolean)
-      .join("/")
-      .replace(/\/+/g, "/"),
 };

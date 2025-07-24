@@ -1,8 +1,8 @@
 {
   "name": "ascend",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Android System Control & ENhanced Debloater",
-  "main": "main.js",
+  "main": "gui/js/main.js",
   "author": "Md. Siam Mia",
   "license": "MIT",
   "scripts": {
@@ -10,21 +10,19 @@
     "build": "node build-installer.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.5.2"
+    "@fortawesome/fontawesome-free": "^7.0.0"
   },
   "devDependencies": {
-    "electron": "^28.3.3",
-    "electron-builder": "^24.13.3"
+    "electron": "^37.2.4",
+    "electron-builder": "^26.0.12"
   },
   "build": {
     "appId": "com.ascend.dev",
     "productName": "A.S.C.E.N.D.",
     "files": [
-      "main.js",
-      "preload.js",
-      "debloat_db.json",
       "gui/**/*",
       "assets/**/*",
+      "data/**/*",
       "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
       "node_modules/@fortawesome/fontawesome-free/webfonts"
     ],
@@ -35,7 +33,7 @@
       }
     ],
     "win": {
-      "icon": "assets/icon.ico",
+      "icon": "assets/img/icon.ico",
       "target": "dir"
     }
   }

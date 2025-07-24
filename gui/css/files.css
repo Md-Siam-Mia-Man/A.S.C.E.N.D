@@ -1,14 +1,12 @@
-#files-tab.tab-content.active {
-     height: calc(100vh - 125px);
-     display: flex;
+/* files.css */
+
+.tab-content#files-tab {
+     height: calc(100vh - 70px);
      flex-direction: column;
 }
 
-.file-explorer-single {
+.tab-content#files-tab.active {
      display: flex;
-     flex-direction: column;
-     flex: 1;
-     min-height: 0;
 }
 
 .file-explorer-header {
@@ -17,21 +15,18 @@
      gap: 15px;
      padding: 10px;
      background: var(--dark-grey);
-     border-radius: 8px;
-     margin-bottom: 10px;
-}
-
-#file-view-controls {
-     display: flex;
-     gap: 5px;
+     border-radius: 12px;
+     margin-bottom: 15px;
+     border: 1px solid var(--mid-grey);
+     flex-shrink: 0;
 }
 
 .view-btn {
-     padding: 8px 10px;
-     background: var(--black);
+     padding: 8px 12px;
+     background: var(--mid-grey);
      color: var(--light-grey);
      border: none;
-     font-size: 14px;
+     font-size: 16px;
      width: auto;
 }
 
@@ -57,12 +52,17 @@
 .breadcrumb-item {
      cursor: pointer;
      color: var(--light-grey);
-     font-size: 13px;
+     font-size: 14px;
+     font-weight: 500;
      white-space: nowrap;
+     padding: 4px 8px;
+     border-radius: 4px;
+     transition: all 0.2s ease;
 }
 
 .breadcrumb-item:hover {
      color: var(--white);
+     background-color: var(--mid-grey);
 }
 
 .breadcrumb-separator {
@@ -74,10 +74,11 @@
      flex: 1;
      overflow-y: auto;
      background: var(--dark-grey);
-     border-radius: 8px;
+     border-radius: 12px;
      padding: 10px;
      display: grid;
      align-content: flex-start;
+     border: 1px solid var(--mid-grey);
 }
 
 .file-list-container.list-view {
@@ -86,38 +87,47 @@
 }
 
 .file-list-container.icon-view {
-     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
      gap: 15px;
 }
 
 .file-item {
      display: flex;
      align-items: center;
-     gap: 10px;
+     gap: 12px;
      padding: 8px;
      border-radius: 6px;
      cursor: pointer;
      user-select: none;
+     transition: background-color 0.2s ease, border-color 0.2s ease;
+     border: 1px solid transparent;
+}
+
+.file-item:hover {
+     background-color: var(--mid-grey);
 }
 
 .file-item.selected {
      background: var(--red);
+     border-color: var(--red-dark);
 }
 
 .icon-view .file-item {
      flex-direction: column;
      text-align: center;
      gap: 8px;
+     padding: 15px 10px;
 }
 
 .file-item i {
-     font-size: 18px;
+     font-size: 20px;
      color: var(--light-grey);
      pointer-events: none;
+     transition: color 0.2s ease;
 }
 
 .icon-view .file-item i {
-     font-size: 32px;
+     font-size: 36px;
 }
 
 .file-item.selected i {
@@ -129,20 +139,22 @@
      overflow: hidden;
      text-overflow: ellipsis;
      max-width: 100%;
-     font-size: 13px;
+     font-size: 14px;
      width: 100%;
      pointer-events: none;
 }
 
 .custom-context-menu {
      position: fixed;
-     z-index: 1000;
-     background: var(--dark-grey);
+     z-index: 10001;
+     background: #202020;
      border-radius: 8px;
      padding: 8px;
-     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
      display: none;
-     animation: contextFadeIn 0.1s ease-in-out;
+     animation: contextFadeIn 0.15s ease;
+     border: 1px solid #4a4a4a;
+     min-width: 180px;
 }
 
 @keyframes contextFadeIn {
@@ -158,13 +170,14 @@
 }
 
 .context-item {
-     padding: 8px 15px;
+     padding: 10px 15px;
      border-radius: 6px;
      cursor: pointer;
      display: flex;
      align-items: center;
-     gap: 10px;
-     font-size: 13px;
+     gap: 12px;
+     font-size: 14px;
+     font-weight: 500;
 }
 
 .context-item:hover {
@@ -175,6 +188,7 @@
      width: 16px;
      text-align: center;
      color: var(--light-grey);
+     transition: color 0.2s ease;
 }
 
 .context-item:hover i {
@@ -183,6 +197,6 @@
 
 .context-item-separator {
      height: 1px;
-     background: var(--light-grey);
+     background: var(--mid-grey);
      margin: 6px 0;
 }
