@@ -1,7 +1,8 @@
 <img src="./assets/img/Banner.png" alt="A.S.C.E.N.D. Application Screenshot"/>
 
-<h1 style="text-align: center; width: 100%;">Android System Control & ENhanced Debloater</h2>
-<div style="text-align: center">
+<h1 style="text-align: center; width: 100%;">Android System Control & ENhanced Debloater</h1>
+
+<div style="text-align: center; width: 100%;">
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Md-Siam-Mia-Code/A.S.C.E.N.D.?style=for-the-badge)
 ![GitHub License](https://img.shields.io/github/license/Md-Siam-Mia-Code/A.S.C.E.N.D.?style=for-the-badge)
