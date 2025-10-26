@@ -4,8 +4,8 @@
 
 <div style="text-align: center; width: 100%;">
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/Md-Siam-Mia-Man/A.S.C.E.N.D.?style=for-the-badge)
-![GitHub License](https://img.shields.io/github/license/Md-Siam-Mia-Man/A.S.C.E.N.D.?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Md-Siam-Mia-Man/A.S.C.E.N.D?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/Md-Siam-Mia-Man/A.S.C.E.N.D?style=for-the-badge)
 
 </div>
 
@@ -59,7 +59,7 @@ To allow A.S.C.E.N.D. to connect to your device, you must enable USB Debugging.
 
 Get up and running in seconds.
 
-1. Navigate to the **[Releases Page](https://github.com/Md-Siam-Mia-Man/A.S.C.E.N.D./releases)**.
+1. Navigate to the **[Releases Page](https://github.com/Md-Siam-Mia-Man/A.S.C.E.N.D/releases)**.
 2. Download the latest `A.S.C.E.N.D-Setup-x.x.x.exe` installer.
 3. Run the installer and follow the on-screen instructions.
 
